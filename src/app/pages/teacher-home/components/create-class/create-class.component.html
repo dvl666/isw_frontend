@@ -1,0 +1,131 @@
+<app-teacher-navbar></app-teacher-navbar>
+<div class="container">
+    <div class="form-container">
+
+      <h2>Crear clase</h2>
+
+      <form [formGroup]="classForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Titulo de la clase</mat-label>
+            <input matInput formControlName="title" required>
+            <mat-error *ngIf="classForm.get('title')!.touched && classForm.get('title')!.invalid">
+                <span *ngIf="classForm.get('title')!.errors! &&
+                classForm.get('title')!.errors!['required']
+                ">Campo requerido</span>
+                <!-- <span *ngIf="classForm.get('email')!.errors! &&
+                classForm.get('email')!.errors!['email']
+                ">Email invalido</span> -->
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Tema de la clase</mat-label>
+            <input matInput formControlName="theme" required>
+            <mat-error *ngIf="classForm.get('theme')!.touched && classForm.get('theme')!.invalid">
+                <span *ngIf="classForm.get('theme')!.errors! &&
+                classForm.get('theme')!.errors!['required']
+                ">Campo requerido</span>
+                <!-- <span *ngIf="classForm.get('email')!.errors! &&
+                classForm.get('email')!.errors!['email']
+                ">Email invalido</span> -->
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Descripcion</mat-label>
+            <input matInput formControlName="description" required>
+            <mat-error *ngIf="classForm.get('description')!.touched && classForm.get('description')!.invalid">
+                <span *ngIf="classForm.get('description')!.errors! &&
+                classForm.get('description')!.errors!['required']
+                ">Campo requerido</span>
+                <!-- <span *ngIf="classForm.get('email')!.errors! &&
+                classForm.get('email')!.errors!['email']
+                ">Email invalido</span> -->
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput formControlName="dateClass" required>
+            <mat-error *ngIf="classForm.get('dateClass')!.touched && classForm.get('dateClass')!.invalid">
+                <span *ngIf="classForm.get('dateClass')!.errors! &&
+                classForm.get('dateClass')!.errors!['required']
+                ">Campo requerido</span>
+                <!-- <span *ngIf="classForm.get('email')!.errors! &&
+                classForm.get('email')!.errors!['email']
+                ">Email invalido</span> -->
+            </mat-error>
+        </mat-form-field>
+
+        <!-- <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input matInput formControlName="dateClass" required [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> -->
+
+        <mat-form-field appearance="outline">
+            <mat-label>Hora de inicio</mat-label>
+            <input matInput formControlName="startTime" required>
+            <mat-error *ngIf="classForm.get('startTime')!.touched && classForm.get('startTime')!.invalid">
+                <span *ngIf="classForm.get('startTime')!.errors! &&
+                classForm.get('startTime')!.errors!['required']
+                ">Campo requerido</span>
+                <!-- <span *ngIf="classForm.get('email')!.errors! &&
+                classForm.get('email')!.errors!['email']
+                ">Email invalido</span> -->
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Hora de inicio</mat-label>
+            <input matInput formControlName="endTime" required>
+            <mat-error *ngIf="classForm.get('endTime')!.touched && classForm.get('endTime')!.invalid">
+                <span *ngIf="classForm.get('endTime')!.errors! &&
+                classForm.get('endTime')!.errors!['required']
+                ">Campo requerido</span>
+                <!-- <span *ngIf="classForm.get('email')!.errors! &&
+                classForm.get('email')!.errors!['email']
+                ">Email invalido</span> -->
+            </mat-error>
+        </mat-form-field>
+          <!-- <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="password" [type]="hide() ? 'password' : 'text'" required />
+            <mat-error *ngIf="classForm.get('password')!.touched && classForm.get('password')!.invalid">
+                <span *ngIf="classForm.get('password')!.errors! &&
+                classForm.get('password')!.errors!['required']
+                ">Campo requerido</span>
+            </mat-error>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()"
+            >
+              <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field> -->
+          
+            <!-- @if (swButton) {
+                <p class="errorMsj2">Credenciales invalidas, intentelo otra vez</p>
+            } @else {
+                <p class="errorMsj">Credenciales invalidas, intentelo otra vez</p>
+            } -->
+
+          <div class="buttons">
+              <button class="logInB" mat-raised-button color="primary" type="submit" [disabled]="classForm.invalid">Crear clase</button>
+          </div>
+
+      </form>
+
+
+    <!-- <p>
+        ¿No tienes cuenta? 
+        <a [routerLink]="['/registro']" style="cursor: pointer;">Registrarse</a>
+    </p> -->
+    </div>
+  </div>

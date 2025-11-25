@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-content: space-around;
+}
+
+h1 {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+.button {
+    margin: 16px 0px 0px ;
+    width: 50%;
+    background-color: red;
+}

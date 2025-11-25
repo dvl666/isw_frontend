@@ -1,0 +1,150 @@
+<div class="container">
+    <div class="form-container">
+      <h2>Registro</h2>
+
+      <mat-form-field [hideRequiredMarker]="true" appearance="outline">
+        <mat-select (selectionChange)="onChange($event.value)" required>
+            <mat-option value="student">Alumno</mat-option>
+            <mat-option value="teacher">Profesor</mat-option>
+        </mat-select>
+        <mat-label> <strong> ¿Alumno o profesor?  </strong></mat-label>
+    </mat-form-field>
+
+    @if (userTypeSelect == 'student') {
+
+        <form [formGroup]="registerStudentForm" (ngSubmit)="onSubmitStudent()">
+  
+          <mat-form-field appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="name" required>
+              <mat-error *ngIf="registerStudentForm.get('name')!.touched && registerStudentForm.get('email')!.invalid">
+                  <span *ngIf="registerStudentForm.get('name')!.errors! &&
+                  registerStudentForm.get('name')!.errors!['required']
+                  ">Campo requerido</span>
+                </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" required>
+              <mat-error *ngIf="registerStudentForm.get('email')!.touched && registerStudentForm.get('email')!.invalid">
+                  <span *ngIf="registerStudentForm.get('email')!.errors! &&
+                  registerStudentForm.get('email')!.errors!['required']
+                  ">Campo requerido</span>
+                  <span *ngIf="registerStudentForm.get('email')!.errors! &&
+                  registerStudentForm.get('email')!.errors!['email']
+                  ">Email invalido</span>
+                </mat-error>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input matInput formControlName="password" [type]="hide() ? 'password' : 'text'" required />
+              <mat-error *ngIf="registerStudentForm.get('password')!.touched && registerStudentForm.get('password')!.invalid">
+                  <span *ngIf="registerStudentForm.get('password')!.errors! &&
+                  registerStudentForm.get('password')!.errors!['required']
+                  ">Campo requerido</span>
+              </mat-error>
+              <button
+                mat-icon-button
+                matSuffix
+                (click)="clickEvent($event)"
+                [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide()"
+              >
+                <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+  
+            <mat-form-field appearance="outline">
+              <mat-label>Celular</mat-label>
+              <input matInput formControlName="contactNumber" required>
+              <mat-error *ngIf="registerStudentForm.get('contactNumber')!.touched && registerStudentForm.get('contactNumber')!.invalid">
+                  <span *ngIf="registerStudentForm.get('contactNumber')!.errors! &&
+                  registerStudentForm.get('contactNumber')!.errors!['required']
+                  ">Campo requerido</span>
+                </mat-error>
+            </mat-form-field>
+  
+            <div class="buttons">
+              <button class="logInB" mat-raised-button color="primary" type="submit" [disabled]="registerStudentForm.invalid">Registrarse</button>
+          </div>
+          
+        </form>
+
+    } @if (userTypeSelect ==='teacher') {
+
+        <form [formGroup]="registerTeacherForm" (ngSubmit)="onSubmitTeacher()">
+  
+            <mat-form-field appearance="outline">
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="name" required>
+                <mat-error *ngIf="registerTeacherForm.get('name')!.touched && registerTeacherForm.get('email')!.invalid">
+                    <span *ngIf="registerTeacherForm.get('name')!.errors! &&
+                    registerTeacherForm.get('name')!.errors!['required']
+                    ">Campo requerido</span>
+                  </mat-error>
+              </mat-form-field>
+    
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" required>
+                <mat-error *ngIf="registerTeacherForm.get('email')!.touched && registerTeacherForm.get('email')!.invalid">
+                    <span *ngIf="registerTeacherForm.get('email')!.errors! &&
+                    registerTeacherForm.get('email')!.errors!['required']
+                    ">Campo requerido</span>
+                    <span *ngIf="registerTeacherForm.get('email')!.errors! &&
+                    registerTeacherForm.get('email')!.errors!['email']
+                    ">Email invalido</span>
+                  </mat-error>
+              </mat-form-field>
+    
+              <mat-form-field appearance="outline">
+                <mat-label>Contraseña</mat-label>
+                <input matInput formControlName="password" [type]="hide() ? 'password' : 'text'" required />
+                <mat-error *ngIf="registerTeacherForm.get('password')!.touched && registerTeacherForm.get('password')!.invalid">
+                    <span *ngIf="registerTeacherForm.get('password')!.errors! &&
+                    registerTeacherForm.get('password')!.errors!['required']
+                    ">Campo requerido</span>
+                </mat-error>
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="clickEvent($event)"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide()"
+                >
+                  <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Especialidad</mat-label>
+                <input matInput formControlName="specialty" required>
+                <mat-error *ngIf="registerTeacherForm.get('specialty')!.touched && registerTeacherForm.get('specialty')!.invalid">
+                    <span *ngIf="registerTeacherForm.get('specialty')!.errors! &&
+                    registerTeacherForm.get('specialty')!.errors!['required']
+                    ">Campo requerido</span>
+                  </mat-error>
+              </mat-form-field>
+    
+              <mat-form-field appearance="outline">
+                <mat-label>Celular</mat-label>
+                <input matInput formControlName="contactNumber" required>
+                <mat-error *ngIf="registerTeacherForm.get('contactNumber')!.touched && registerTeacherForm.get('contactNumber')!.invalid">
+                    <span *ngIf="registerTeacherForm.get('contactNumber')!.errors! &&
+                    registerTeacherForm.get('contactNumber')!.errors!['required']
+                    ">Campo requerido</span>
+                  </mat-error>
+              </mat-form-field>
+    
+              <div class="buttons">
+                <button class="logInB" mat-raised-button color="primary" type="submit" [disabled]="registerTeacherForm.invalid">Registrarse</button>
+            </div>
+            
+        </form>
+
+    }
+      <p>¿Ya tienes cuenta? <a style="cursor: pointer;">Iniciar Sesión</a></p>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar" color="primary">
+    <div class="toolbar-content">
+        <div>
+            Aula Virtual
+        </div>
+        <div class="toolbar-links">
+            <a mat-button [routerLink]="['/student-home']">Zona de inscripcion</a>
+            <a mat-button [routerLink]="['/student-incriptions']">Ver tus inscripciones</a>
+        </div>
+        <div class="toolbar-user">
+            <button [routerLink]="['user_profile']" mat-mini-fab>
+                <mat-icon>person</mat-icon>
+              </button>
+        </div>
+    </div>
+</mat-toolbar>

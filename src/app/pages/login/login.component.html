@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="form-container">
+
+      <h2>Iniciar Sesión</h2>
+
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" required>
+            <mat-error *ngIf="userForm.get('email')!.touched && userForm.get('email')!.invalid">
+                <span *ngIf="userForm.get('email')!.errors! &&
+                userForm.get('email')!.errors!['required']
+                ">Campo requerido</span>
+                <span *ngIf="userForm.get('email')!.errors! &&
+                userForm.get('email')!.errors!['email']
+                ">Email invalido</span>
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Contraseña</mat-label>
+            <input matInput formControlName="password" [type]="hide() ? 'password' : 'text'" required />
+            <mat-error *ngIf="userForm.get('password')!.touched && userForm.get('password')!.invalid">
+                <span *ngIf="userForm.get('password')!.errors! &&
+                userForm.get('password')!.errors!['required']
+                ">Campo requerido</span>
+            </mat-error>
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="clickEvent($event)"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide()"
+            >
+              <mat-icon>{{hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+          
+            @if (swButton) {
+                <p class="errorMsj2">Credenciales invalidas, intentelo otra vez</p>
+            } @else {
+                <p class="errorMsj">Credenciales invalidas, intentelo otra vez</p>
+            }
+
+          <div class="buttons">
+              <button class="logInB" mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Iniciar sesión</button>
+          </div>
+
+      </form>
+
+
+    <p>
+        ¿No tienes cuenta? 
+        <a [routerLink]="['/registro']" style="cursor: pointer;">Registrarse</a>
+    </p>
+    </div>
+  </div>

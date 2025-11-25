@@ -1,0 +1,8 @@
+<app-student-navbar></app-student-navbar>
+<h1>En esta pagina encontraras todas las clases disponibles</h1>
+<div class="container">
+         @for (class of classes; track $index) {
+             <!-- <p>hola</p> -->
+             <app-class-card [class]="class"></app-class-card>
+         }
+</div>

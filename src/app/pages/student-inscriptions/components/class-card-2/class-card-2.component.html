@@ -1,0 +1,16 @@
+
+@if(!click) {
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title> {{class.theme}} </mat-card-title>
+            <mat-card-subtitle> {{class.title}} </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+            <!-- @if(!click) { -->
+                <button (click)="onClick(class.id!)" class="button" mat-flat-button>Desinscribirse</button>
+            <!-- } @else {
+                <button (click)="onClick()" class="button-d" mat-flat-button disabled="">Ya estas inscrito a esta clase</button>
+            } -->
+        </mat-card-actions>
+    </mat-card>
+}

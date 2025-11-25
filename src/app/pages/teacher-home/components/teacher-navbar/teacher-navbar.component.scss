@@ -1,0 +1,31 @@
+.toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.toolbar-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+
+.toolbar-content a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.toolbar-links {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 0px;
+}
+
+.mat-toolbar.mat-primary {
+    --mat-toolbar-container-background-color: #007BFF;
+    --mat-toolbar-container-text-color: white;
+}

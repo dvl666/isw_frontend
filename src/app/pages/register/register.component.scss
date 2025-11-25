@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.form-container {
+    background-color: #007BFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 666px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: white;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+// input, select, button {
+//     width: calc(100% - 20px);
+//     padding: 8px;
+//     margin: 5px 0 10px 0;
+//     border: 1px solid #ccc;
+//     border-radius: 4px;
+// }
+
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: calc(100% - 20px);
+    margin: 10px 0;
+    padding: 10px;
+}
+
+// button:hover {
+//     background-color: #0056b3;
+// }
+
+p {
+    text-align: center;
+    color: #f0f0f0;
+}
+
+a {
+    color: #007BFF;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.password-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.toggle-password-checkbox {
+    display: none;
+}
+
+.toggle-password-label {
+    cursor: pointer;
+    color: #007BFF;
+    display: block;
+    margin-top: 5px;
+}
+
+.toggle-password-checkbox + .password-input {
+    -webkit-text-security: disc;
+}
+
+.toggle-password-checkbox:checked + .password-input {
+    -webkit-text-security: none;
+}
+
+mat-form-field {
+    width: 80%;
+    margin-bottom: 16px;
+    margin-top: 8px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logInB {
+    width: 50%;
+    height: 50px;
+    color: white;
+}
+
+.mat-mdc-raised-button.mat-primary {
+    --mdc-protected-button-container-color: green;
+    --mdc-protected-button-label-text-color: white;
+    --mat-protected-button-state-layer-color: white;
+    --mat-protected-button-ripple-color: rgba(255, 255, 255, 0.1);
+}
