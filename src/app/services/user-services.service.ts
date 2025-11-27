@@ -13,7 +13,7 @@ export class UserServicesService {
     private readonly http: HttpClient
   ) { }
 
-  private apiUrl = 'http://backend:3000'
+  private apiUrl = 'http://localhost:3000'
 
   setUpId(id: number) {
     this.id = id
