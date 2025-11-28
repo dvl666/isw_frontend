@@ -13,7 +13,7 @@ export class UserServicesService {
     private readonly http: HttpClient
   ) { }
 
-  private apiUrl = 'http://localhost:6666'
+  private apiUrl = 'http://localhost:8080'
 
   setUpId(id: number) {
     this.id = id
