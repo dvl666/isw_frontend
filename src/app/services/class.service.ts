@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ClassService {
 
-  private apiUrl = 'http://isw_backend_dev_api:3000'
+  private apiUrl = 'http://localhost:6666'
   teacherId: number
 
   setTeacherId(id: number) {

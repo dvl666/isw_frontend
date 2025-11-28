@@ -13,7 +13,7 @@ export class UserServicesService {
     private readonly http: HttpClient
   ) { }
 
-  private apiUrl = 'http://isw_backend_dev_api:3000'
+  private apiUrl = 'http://localhost:6666'
 
   setUpId(id: number) {
     this.id = id
