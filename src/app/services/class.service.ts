@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ClassService {
 
-  private apiUrl = 'http://localhost:3000'
+  private apiUrl = 'http://localhost:8081'
   teacherId: number
 
   setTeacherId(id: number) {
